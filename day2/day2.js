@@ -71,7 +71,7 @@
       });
   }
 
-  // TODO: function which takes the answer Id and colours the buttons
+  // re-colours the buttons
   function styleButtons(buttons) {
     Array.from(buttons)
       .forEach((button) => {
