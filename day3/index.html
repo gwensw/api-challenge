@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>API Challenge | Day 3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Outline:400|Londrina+Solid:100|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="day3.css" />
+    <script src="day3.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1 class="title">DAY 3</h1>
+      <nav class="header__nav">
+        <a href="../day2/index.html">&leftarrow; Previous</a>
+        <a href="../index.html">API Challenge Home</a>
+        <a href="../day4/index.html">Next up &rightarrow;</a>
+      </nav>
+    </header>
+    <main>
+      <section class="centerdiv">
+        <h2>Where is the International Space Station?</h2>
+        <div class="centerdiv">
+          <img id="banner" class="banner">
+          <img id="iss" class="iss" src="./iss.png">
+        </div>
+        <div class="centerdiv">
+          <p id="location">searching for the ISS...</p>
+        </div>
+        <div class="rowdiv">
+          <div class="centerdiv centerdiv--half">
+            <h3>LAT.</h3>
+            <p id="lat">-</p>
+          </div>
+          <div class="centerdiv centerdiv--half">
+            <h3>LONG.</h3>
+            <p id="long">-</p>
+          </div>
+        </div>
+    </section>
+    <div class="timer">
+      <div class="timer__slider">
+        <img class="timer__img" src="./iss.png">
+      </div>
+      <p class="timer__message">getting new coordinates...</p>
+    </div>
+    </main>
+    <footer>
+      <p>Today's experiment powered by the <a href="http://open-notify.org/">Open Notify API</a>, <a href="https://opencagedata.com/">OpenCage Geocoder</a> and the <a href="https://countryflags.io/">CountryFlags API</a>. Ocean icon by <a href="http://www.freepik.com" title="Freepik">Freepik</a></p>
+    </footer>
+  </body>
+</html>
