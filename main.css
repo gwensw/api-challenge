@@ -39,6 +39,11 @@ a {
   text-decoration: none;
 }
 
+footer a {
+  text-decoration: underline;
+  color: #555;
+}
+
 .title {
   width: 100%;
   margin: 20px auto;
