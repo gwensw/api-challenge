@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>API Challenge | Day 4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Londrina+Outline:400|Londrina+Solid:100|Montserrat" rel="stylesheet">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="day4.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="title">DAY 4</h1>
+      <nav class="header__nav">
+        <a href="../day3/index.html">&leftarrow; Previous</a>
+        <a href="../index.html">API Challenge Home</a>
+        <a href="../day5/index.html">Next up &rightarrow;</a>
+      </nav>
+    </header>
+    <main id="main">
+      <h2>Crime Comparison (England & Wales)</h2>
+      <p>Select any two towns to compare the number of crimes recorded last month.</p>
+      <select id="town1"><option></option></select>
+      <select id="town2"><option></option></select>
+      <button id="randomise">Randomise</button>
+      <div id="crimeCategories" class="ct-chart ct-major-third"></div>
+      <div class="sideBySide">
+        <section class="towninfo">
+            <h3 id="town1-title"></h3>
+            <h4 id="town1-force"></h4>
+            <div id="town1-details" class="details"></div>
+        </section>
+        <section class="towninfo">
+            <h3 id="town2-title"></h3>
+            <h4 id="town2-force"></h4>
+            <div id="town2-details" class="details"></div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <p>Today's experiment powered by the <a href="https://data.police.uk/docs/">police.uk API</a> and <a href="">Nominatim API</a>. UK town list courtesy of <a href='https://www.paulstenning.com/uk-towns-and-counties-list/'>Paul Stenning</a></p>
+    </footer>
+    <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+    <script src="towns.js"></script>
+    <script src="day4.js"></script>
+  </body>
+</html>

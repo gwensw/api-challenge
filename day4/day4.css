@@ -1,0 +1,43 @@
+h2 {
+  margin-top: 0;
+}
+
+.sideBySide {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1000px;
+}
+
+.towninfo {
+  flex: 1 1 50%;
+  padding: 0 20px;
+}
+
+.details {
+  text-align: justify;
+}
+
+#town1-title {
+  border-left: 10px solid #f05b4f;
+  padding-left: 5px;
+}
+
+#town2-title {
+  border-left: 10px solid #66A2A9;
+  padding-left: 5px;
+}
+
+#crimeCategories {
+  max-height: 400px;
+  max-width: 1000px;
+  margin-top: 10px;
+}
+
+.ct-series-a .ct-bar {
+  stroke: #66A2A9;
+}
+
+.ct-series-b .ct-bar {
+  stroke: #f05b4f;
+}
