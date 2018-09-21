@@ -32,6 +32,16 @@ main {
   font-size: 25px;
 }
 
+#error {
+  margin: 30px auto;
+  font-size: 20px;
+  font-family: 'Amatic SC', sans-serif;
+}
+
+.hide {
+  display: none;
+}
+
 .prompts {
   width: 100%;
   display: flex;

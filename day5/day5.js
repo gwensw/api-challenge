@@ -93,7 +93,6 @@
     return categoryTypes.map((catType) => {
       if (genre) {
         const returnval = randomFrom(searchTerms[catType][genre]);
-        console.log(catType, ':', returnval);
         return returnval;
       }
       // merge all the arrays in the category type
@@ -105,7 +104,6 @@
       }
       // then pick a random search term from the combined array
       const returnval = randomFrom(allGenres);
-      console.log(catType, ':', returnval);
       return returnval;
     });
   }
@@ -136,6 +134,7 @@
   }
 
   function getImages(genre = false) {
+    const errorMessage = document.getElementById('error');
     applyBlurs(); // reapply the blurs to everything
     const categoryTypes = ['person', 'place', 'thing', 'person'];
     const categories = ['character', 'location1', 'object', 'antagonist'];
@@ -148,6 +147,12 @@
         categories.forEach((category, i) => {
           loadImage(category, responses[i].url);
         });
+        errorMessage.classList.add('hide'); // make sure error is hidden
+      })
+      .catch((err) => {
+        errorMessage.classList.remove('hide'); // show error message
+        console.error(err);
+        setTimeout(getImages, 5000);
       });
   }
 
