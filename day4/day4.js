@@ -122,14 +122,20 @@
       crimePromise
         .then(data => data.json())
         .then(data => updateChart(id, town, data))
-        .catch(error => console.error(`Crime data for ${town} not found: ${error}`));
+        .catch((error) => {
+          console.error(`Crime data for ${town} not found: ${error}`);
+          showTownError(id, town);
+        });
 
       forcePromise
         .then(data => data.json())
         .then(res => fetch(`${url}forces/${res.force}`))
         .then(data => data.json())
         .then(details => updateForceDetails(id, details))
-        .catch(error => console.error(`Local force details for ${town} not found: ${error}`));
+        .catch((error) => {
+          console.error(`Local force details for ${town} not found: ${error}`);
+          showTownError(id, town);
+        });
     } catch (err) {
       showTownError(id, town);
     }
