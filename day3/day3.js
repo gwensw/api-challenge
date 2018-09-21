@@ -53,12 +53,15 @@
 
   async function getBanner(countryCode) {
     return new Promise((resolve) => {
-      const src = `https://www.countryflags.io/${countryCode}/flat/64.png`;
+      const src = `https://www.countryflags.io/${countryCode}/flat/64.png`
+      // create a throwaway image
       const downloadingImage = new Image();
+      // handle eventual download of image source
       downloadingImage.onload = () => {
         resolve(src);
       };
-      downloadingImage.src = `https://www.countryflags.io/${countryCode}/flat/64.png`;
+      // start downloading image source
+      downloadingImage.src = src;
     });
   }
 
