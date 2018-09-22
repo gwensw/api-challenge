@@ -56,6 +56,7 @@
 
   function showHideObject() {
     document.querySelector('.object').classList.toggle('object--loading');
+    document.querySelector('.loader').classList.toggle('loader--loading');
   }
 
   function renderImage(imageLink) {
@@ -74,13 +75,13 @@
     });
   }
 
-  async function init() {
+  async function init(term) {
     // hide the object
     showHideObject();
     // choose a random term
-    const term = searchTerms[randomFrom(searchTerms)];
+    const termToSearch = term || searchTerms[randomFrom(searchTerms)];
     // get the collection data
-    const data = await searchCollection(term);
+    const data = await searchCollection(termToSearch);
     // pick a random item from the array
     const object = chooseObject(data.data);
     // deconstruct the array into id, title, description, imageLink

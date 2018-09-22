@@ -1,3 +1,18 @@
+main {
+  background-color: #052208;
+  width: 100%;
+  padding: 0 0 40px;
+}
+
+h2 {
+  width: 100%;
+  margin: 30px 0 25px;
+  text-align: center;
+  color: #ebd5b3;
+  font-family: 'Special Elite', monospace;
+  font-size: 30px;
+}
+
 #searchers {
   display: flex;
   flex-direction: row;
@@ -12,6 +27,7 @@
   display: block;
   flex: 1 0 auto;
   padding: 10px;
+  border: 1px solid #b9a78b;
   background-color: #ebd5b3;
   font-family: 'Special Elite', monospace;
   font-size: 14px;
@@ -30,7 +46,7 @@
   align-items: center;
   justify-content: space-around;
   max-width: 700px;
-  max-height: 1000px;
+  max-height: 700px;
   height: auto;
   margin: 0 auto;
   padding: 20px;
@@ -63,7 +79,29 @@
   color: blue;
 }
 
+.loader {
+  display: none;
+  width: 740px;
+  margin: 0 auto;
+}
+
+.loader p {
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
+  color: white;
+  font-family: 'Special Elite', monospace;
+}
+
+.loader--loading {
+  display: block;
+}
+
 @media screen and (max-width: 690px) {
+  h2 {
+    font-size: 20px;
+  }
+
   .object {
     flex-direction: column;
   }
