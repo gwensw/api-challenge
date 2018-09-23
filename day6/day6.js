@@ -56,7 +56,6 @@
 
   function showHideObject() {
     document.querySelector('.object').classList.toggle('object--loading');
-    document.querySelector('.loader').classList.toggle('loader--loading');
   }
 
   function renderImage(imageLink) {
@@ -67,10 +66,13 @@
       const downloader = new Image();
       downloader.onload = () => {
         showHideObject();
+        document.getElementById('imageloader').classList.remove('loader--loading');
         image.src = imageLink; // display the preloaded image
         downloader.remove(); // delete the temp image
         resolve();
       };
+      document.getElementById('dataloader').classList.remove('loader--loading');
+      document.getElementById('imageloader').classList.add('loader--loading');
       downloader.src = imageLink; // start the download
     });
   }
@@ -78,6 +80,7 @@
   async function init(term) {
     // hide the object
     showHideObject();
+    document.getElementById('dataloader').classList.add('loader--loading');
     // choose a random term
     const termToSearch = term || searchTerms[randomFrom(searchTerms)];
     // get the collection data
@@ -95,8 +98,6 @@
       });
   }
 
-  init();
-
   document.getElementById('searchers').addEventListener('click', (e) => {
     const { term } = e.target.dataset;
     if (term === 'random') {
@@ -105,4 +106,6 @@
       init(term);
     }
   });
+
+  init();
 }
