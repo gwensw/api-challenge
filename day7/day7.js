@@ -91,6 +91,7 @@ function renderCharacter(id, char, responses) {
 }
 
 function animateCharacter(id) {
+  console.log('animateCharacter called');
   document.querySelector(`#${id} .eyes .bruise`).classList.toggle('hidden');
   document.querySelector(`#${id}`).classList.toggle('shake');
   document.querySelector(`#${id} .scrape`).classList.toggle('scraped');
@@ -129,16 +130,25 @@ async function init() {
     // pick next contestant
     const char = pickNextContestant(people, contestantsSoFar);
     contestantsSoFar.push(char.url);
+    // animate the defeated contestant
+    if (contestantsSoFar.length > 2) {
+      animateCharacter(id);
+      console.log(contestantsSoFar.length);
+    }
     // load extra info about contestant
     const speciesPromise = getPage(char.species);
     const homeworldPromise = getPage(char.homeworld);
     Promise.all([speciesPromise, homeworldPromise])
       .then((responses) => {
-        // render the contestant
         // set a timeout here to give the animation time to load
-        if (contestantsSoFar.length > 2) animateCharacter(id);
-        const waitTime = contestantsSoFar.length > 2 ? 0 : 1000;
+        const waitTime = contestantsSoFar.length <= 2 ? 0 : 1000;
         setTimeout(() => {
+          if (waitTime) {
+            animateCharacter(id);
+          } else {
+            document.getElementById('char1__name').classList.remove('loading');
+            document.getElementById('char2__name').classList.remove('loading');
+          }
           renderCharacter(id, char, responses);
         }, waitTime);
       })
@@ -149,11 +159,11 @@ async function init() {
   renderNewContestant('char2');
   // attach event listeners
   document.getElementById('char1-container').addEventListener('click', () => {
-    animateCharacter('char2');
+    // animateCharacter('char2');
     renderNewContestant('char2');
   });
   document.getElementById('char2-container').addEventListener('click', () => {
-    animateCharacter('char1');
+    // animateCharacter('char1');
     renderNewContestant('char1');
   });
 }

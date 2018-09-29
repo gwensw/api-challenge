@@ -26,7 +26,7 @@ p {
   align-items: center;
   justify-content: space-around;
   max-width: 1050px;
-  margin: 0 auto 100px;
+  margin: 0 auto 30px;
 }
 
 .innercontainer {
@@ -105,7 +105,7 @@ p {
   border-radius: 25px;
   background: none;
   transform: rotate(-50deg);
-  transition: all 0.5s linear;
+  transition: none;
 }
 
 .scrape:after {
@@ -117,7 +117,7 @@ p {
   height: 2px;
   background: inherit;
   transform: rotate(80deg);
-  transition: all 0.5s linear;
+  transition: none;
 }
 
 .hidden {
@@ -126,10 +126,12 @@ p {
 
 .scraped {
   background: rgba(212, 28, 28, 0.89);
+  transition: all 0.5s linear;
 }
 
 .shake {
   transform: rotate(15deg);
+  transition: all 0.5s linear;
 }
 
 .species,
@@ -193,4 +195,22 @@ p {
   right: -0.5em;
   top: -0.5em;
   border-color: #423091 #423091 #423091 #302369;
+}
+
+.note {
+  width: 100%;
+  text-align: center;
+}
+
+.loading {
+  animation-name: loading;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  transition: color 1s linear;
+}
+
+@keyframes loading {
+  from {color: white;}
+  to {color: #674be5;}
 }
