@@ -34,7 +34,7 @@
   }
 
   async function getISSCoordinates() {
-    const data = await fetch('http://api.open-notify.org/iss-now.json');
+    const data = await fetch('https://cors-anywhere.herokuapp.com/http://api.open-notify.org/iss-now.json');
     const parsedData = await data.json();
     const coords = parsedData.iss_position;
     return coords;
@@ -53,7 +53,7 @@
 
   async function getBanner(countryCode) {
     return new Promise((resolve) => {
-      const src = `https://www.countryflags.io/${countryCode}/flat/64.png`
+      const src = `https://www.countryflags.io/${countryCode}/flat/64.png`;
       // create a throwaway image
       const downloadingImage = new Image();
       // handle eventual download of image source
