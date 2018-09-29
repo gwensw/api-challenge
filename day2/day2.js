@@ -4,7 +4,7 @@
 
   // fetches 6 random article ids
   function getIds() {
-    const queryString = 'http://en.wikipedia.org/w/api.php?action=query&format=json&list=random&redirects=1&rnnamespace=0&rnlimit=6&origin=*';
+    const queryString = 'https://en.wikipedia.org/w/api.php?action=query&format=json&list=random&redirects=1&rnnamespace=0&rnlimit=6&origin=*';
     return fetch(queryString)
       .then(data => data.json());
   }

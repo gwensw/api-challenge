@@ -34,7 +34,7 @@
   }
 
   async function getISSCoordinates() {
-    const data = await fetch('http://api.open-notify.org/iss-now.json');
+    const data = await fetch('https://api.open-notify.org/iss-now.json');
     const parsedData = await data.json();
     const coords = parsedData.iss_position;
     return coords;

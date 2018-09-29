@@ -1,5 +1,5 @@
 function randomGif(tag) {
-  fetch(`http://api.giphy.com/v1/gifs/random?tag=${tag}&rating=G&api_key=6zhKqvUGeYCpwndY2geuy4cEe0g7dRRv`)
+  fetch(`https://api.giphy.com/v1/gifs/random?tag=${tag}&rating=G&api_key=6zhKqvUGeYCpwndY2geuy4cEe0g7dRRv`)
     .then(res => res.json())
     .then((res) => {
       document.getElementById('gif').src = res.data.images.fixed_height.url;

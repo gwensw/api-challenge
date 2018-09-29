@@ -45,7 +45,7 @@
   }
 
   function renderOutlink(id) {
-    const url = `http://collectionsearch.nma.gov.au/object/${id}`;
+    const url = `https://collectionsearch.nma.gov.au/object/${id}`;
     document.getElementById('outlink').href = url;
     document.getElementById('outlink').textContent = 'view this in the museum collection';
   }
